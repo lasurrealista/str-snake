@@ -184,8 +184,7 @@ export default class Piece implements IPiece {
   };
 
   isCollidingWith(node: Piece | null): boolean {
-    if (node === null)
-      return false;
+    if (node === null) return false;
     return this.x === node.x && this.y === node.y;
   };
 
