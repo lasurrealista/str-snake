@@ -26,8 +26,28 @@ export default class Game extends BaseGame {
     this.renderGarden();
     this.handleFood();
     this.setEvents();
+    this.getRandomLevel();
+    this.mayIHaveGoldenApple();
+    this.removeGrid();
   }
 
+  getRandomLevel():Level{
+    const index = Math.floor(Math.random()*this.levels.length);
+    return this.levels[index]
+  }
+  
+  mayIHaveGoldenApple():boolean{
+    const chance = 5;
+    const pick = Math.random()*100;
+    return pick < chance ? true : false
+  }
+
+  removeGrid():void{
+    document.querySelectorAll('.vertical-grid').forEach(Utils.removeNode);
+    document.querySelectorAll('.horizontal-grid').forEach(Utils.removeNode);
+    this.gridVisible = false
+  }
+  
   get highScore (): number {
     return parseInt(localStorage.getItem('high-score') || '0', 10) || 0;
   }
