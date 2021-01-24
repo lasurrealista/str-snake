@@ -30,9 +30,9 @@ export default abstract class BaseGame implements IBaseGame {
 
     /**
      * @returns {boolean}
-     * 1. hozz létre egy chance neű változót 5 értékkel
+     * 1. hozz létre egy chance nevű változót 5 értékkel
      * 2. hozz létre egy pick nevű változót, értéke random szám szorozva 100 -al
-     * 3. térj vissza true értékkel, ha a pick kisebb int a chance
+     * 3. térj vissza true értékkel, ha a pick kisebb mint a chance
      */
     abstract mayIHaveGoldenApple(): boolean;
 
