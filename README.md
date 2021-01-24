@@ -1,4 +1,4 @@
-# Snake Game to practicing TypeScript
+# Snake Game for practicing TypeScript
 
 ## Leírás
 Pótold a játék hiányzó részeit!
