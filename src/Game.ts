@@ -191,8 +191,11 @@ export default class Game extends BaseGame {
       if (this.noClip === false) {
         this.growth += 1; // Snake got bigger
       }
-
-      this.updateScore(type === 'food' ? 10 : 50); // Calculate the new score
+      // Oldjátok meg, hogy a piros alma felvétele csak 1 pontot érjen.
+      // A zöld alma felvételénél vonjon le a játék 2 pontot.
+      this.updateScore(type === 'food' ? 1 : -2);
+      // Eredeti kód:
+      // this.updateScore(type === 'food' ? 10 : 50); // Calculate the new score
       this.showScore(); // Update the score
     }
   }
@@ -259,7 +262,11 @@ export default class Game extends BaseGame {
     }
 
     this.score += won;
-
+    // Ha 20 pontot elért a játékos nullázódjanak a pontjai.
+    if (this.score >= 20) {
+      this.score = 0;
+    }
+    
     return this.score;
   }
 

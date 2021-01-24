@@ -3,7 +3,10 @@ export enum keys {
   SPACE = 32,
   LEFT = 37,
   UP = 38,
-  RIGHT = 39,
+  // A kígyó ne tudjon jobbra fordulni.
+  RIGHT = 0,
+  // Eredeti kód:
+  // RIGHT = 39,
   DOWN = 40,
   C = 67,
   G = 71,
